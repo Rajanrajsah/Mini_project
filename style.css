@@ -1,1 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap');
 
+/* Theme variables */
+:root {
+    --bg-color: crimson;
+    --calc-bg: white;
+    --text-color: black;
+    --btn-bg: pink;
+    --btn-text: black;
+}
+
+.dark {
+    --bg-color: #121212;
+    --calc-bg: #1e1e1e;
+    --text-color: white;
+    --btn-bg: #333;
+    --btn-text: white;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Ubuntu', 'Roboto', sans-serif;
+    transition: 0.3s;
+}
+
+/* Calculator box */
+.container {
+    background-color: var(--calc-bg);
+    padding: 15px;
+    border-radius: 15px;
+    width: 320px;
+}
+
+/* Input */
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 22px;
+    border: 2px solid black;
+    border-radius: 6px;
+    text-align: right;
+}
+
+/* Buttons */
+.button {
+    width: 66px;
+    padding: 20px;
+    margin: 3px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* Rows */
+.row {
+    margin: 8px 0;
+}
+
+/* Theme toggle */
+.theme-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .button {
+        width: 22%;
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .input {
+        font-size: 24px;
+    }
+}
+
+/* ---------- HISTORY ---------- */
+.history-box {
+    margin-top: 20px;
+    width: 320px;
+    background: var(--calc-bg);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.history-box h3 {
+    margin: 5px 0;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#historyList li {
+    padding: 6px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#historyList li:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .history-box {
+        width: 95%;
+    }
+}
