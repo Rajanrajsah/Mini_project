@@ -27,6 +27,11 @@ A modern, responsive calculator web application built using **HTML, CSS, and Jav
 
 ---
 
+[View Calculator Project on GitHub]
+(
+https://github.com/Rajanrajsah/Mini_project
+)
+
 ## 📁 Project Structure
 
 
