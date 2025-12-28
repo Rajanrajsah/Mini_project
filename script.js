@@ -103,6 +103,14 @@ function addToHistory(exp, res) {
         historyList.removeChild(historyList.lastChild);
     }
 }
+const toggle = document.getElementById("themeToggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  toggle.textContent =
+    document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
+
 
 // Clear history
 clearHistoryBtn.addEventListener("click", () => {
