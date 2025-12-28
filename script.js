@@ -1,7 +1,7 @@
 const historyList = document.getElementById("historyList");
 const clearHistoryBtn = document.getElementById("clearHistory");
 
-let input = document.querySelector('.input');
+let input = document.querySelector('.display');
 let buttons = document.querySelectorAll('.button');
 let expression = "";
 
