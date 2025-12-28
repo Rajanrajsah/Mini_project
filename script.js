@@ -13,20 +13,34 @@ buttons.forEach(btn => {
 });
 
 /* Keyboard support */
-document.addEventListener('keydown', (e) => {
-    const key = e.key;
+document.addEventListener("keydown", (e) => {
+  if ((e.key >= 0 && e.key <= 9) || "+-*/.%".includes(e.key)) {
+    string += e.key;
+    document.querySelector('.display').value = string;
+  }
 
-    if (!isNaN(key) || operators.includes(key) || key === '.') {
-        handleInput(key);
-    } else if (key === 'Enter') {
-        handleInput('=');
-    } else if (key === 'Backspace') {
-        expression = expression.slice(0, -1);
-        input.value = expression;
-    } else if (key === 'Escape') {
-        handleInput('C');
-    }
+  if (e.key === "Enter") {
+    let result = eval(string);
+    document.querySelector('.display').value = result;
+
+    let li = document.createElement("li");
+    li.textContent = `${string} = ${result}`;
+    document.getElementById("historyList").appendChild(li);
+
+    string = result.toString();
+  }
+
+  if (e.key === "Backspace") {
+    string = string.slice(0, -1);
+    document.querySelector('.display').value = string;
+  }
+
+  if (e.key === "Escape") {
+    string = "";
+    document.querySelector('.display').value = "";
+  }
 });
+
 
 /* Main logic */
 function handleInput(value) {
@@ -116,3 +130,5 @@ toggle.addEventListener("click", () => {
 clearHistoryBtn.addEventListener("click", () => {
     historyList.innerHTML = "";
 });
+
+
